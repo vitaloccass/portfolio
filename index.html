@@ -46,9 +46,9 @@
   .mono{font-family:'IBM Plex Mono',monospace;}
   a{color:inherit;}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-
+ 
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:1;}
-
+ 
   /* NAV */
   nav{
     display:flex;justify-content:space-between;align-items:flex-start;
@@ -62,7 +62,7 @@
   .nav-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:35px;line-height:1.15;}
   .nav-name span{color:var(--accent);display:block;}
   .nav-photo{
-    width:135px;height:135px;
+    width:138px;height:138px;
     border-radius:50%;
     object-fit:cover;
     border:2px solid var(--accent);
@@ -71,7 +71,7 @@
   .nav-links{display:flex;gap:28px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text-muted);align-self:flex-start;}
   .nav-links a{text-decoration:none;transition:color .2s;}
   .nav-links a:hover{color:var(--accent);}
-
+ 
   /* HERO */
   .hero{
     padding:64px 0 40px;
@@ -111,7 +111,7 @@
   .btn-primary:hover{background:#f0b45c;}
   .btn-ghost{border:1px solid var(--line);color:var(--text);}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-
+ 
   /* SIGNATURE FLOW DIAGRAM */
   .flow-diagram{
     background:var(--bg-elevated);
@@ -134,13 +134,13 @@
   .flow-line.active{stroke:var(--accent);animation:dash 22s linear infinite;}
   @keyframes dash{to{stroke-dashoffset:-400;}}
   .flow-dot{fill:var(--accent);}
-
+ 
   /* SECTIONS */
   section{padding:72px 0;position:relative;z-index:1;}
   .section-head{margin-bottom:40px;}
   .section-head .eyebrow{margin-bottom:10px;}
   .section-head h2{font-size:clamp(24px,3vw,32px);}
-
+ 
   /* PROJECTS */
   .project{
     background:var(--bg-card);
@@ -186,7 +186,55 @@
     border:1px solid var(--line);color:var(--text-muted);
     padding:4px 9px;border-radius:5px;
   }
-
+ 
+  /* PROJECT SUB-BLOCKS (backend/frontend) */
+  .project-sub{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .project-sub-block{
+    background:var(--bg-elevated);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .project-sub-block h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:0.08em;
+    margin-bottom:10px;
+  }
+  .project-sub-block ul{list-style:none;}
+  .project-sub-block li{
+    font-size:13.5px;color:var(--text-muted);
+    padding:4px 0;
+    position:relative;
+    padding-left:14px;
+  }
+  .project-sub-block li::before{
+    content:"–";
+    position:absolute;left:0;color:var(--text-faint);
+  }
+  .project-condition{
+    background:rgba(232,163,61,0.08);
+    border:1px solid var(--accent-dim);
+    border-radius:8px;
+    padding:14px 18px;
+    margin-bottom:16px;
+  }
+  .project-condition h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;color:var(--accent);
+    text-transform:uppercase;letter-spacing:0.08em;
+    margin-bottom:8px;
+  }
+  .project-condition p{
+    font-size:13.5px;color:var(--text);
+    margin:0;
+  }
+ 
   /* SKILLS */
   .skills-grid{
     display:grid;
@@ -212,7 +260,7 @@
     border-bottom:1px solid var(--line);
   }
   .skill-group li:last-child{border-bottom:none;}
-
+ 
   /* CONTACT */
   .contact-box{
     background:var(--bg-elevated);
@@ -224,7 +272,7 @@
   .contact-box h2{font-size:clamp(22px,3vw,30px);margin-bottom:14px;}
   .contact-box p{color:var(--text-muted);margin-bottom:28px;}
   .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
+ 
   footer{
     padding:32px 0 48px;
     text-align:center;
@@ -233,12 +281,12 @@
     color:var(--text-faint);
     position:relative;z-index:1;
   }
-
+ 
   @media (prefers-reduced-motion: reduce){
     .flow-line.active{animation:none;}
     html{scroll-behavior:auto;}
   }
-
+ 
   @media (max-width:640px){
     nav{flex-direction:column;gap:14px;align-items:flex-start;}
     .hero{padding-top:36px;}
@@ -323,7 +371,7 @@
   <section id="projets">
     <div class="section-head">
       <div class="eyebrow">01 — Réalisations</div>
-      <h2>Cinq automatisations en production</h2>
+      <h2>Six automatisations en production</h2>
     </div>
 
     <div class="project">
@@ -343,7 +391,7 @@
         automatiquement par Gmail. Une seconde application backend en Python récupère le fichier dans Drive,
         le rapatrie en local, avant son import final dans SAGE.
       </p>
-      <a class="project-link" href="https://vocale-1.onrender.com/" target="_blank" rel="noopener">Voir la démo en ligne ↗</a>
+      <a class="project-link" href="https://vocale-bxbw.onrender.com/" target="_blank" rel="noopener">Voir la démo en ligne ↗</a>
       <div class="tags"><span class="tag">Python</span><span class="tag">Gmail API</span><span class="tag">Google Drive</span><span class="tag">SAGE</span></div>
     </div>
 
@@ -417,6 +465,50 @@
         jusqu'au bon de livraison, en passant par le bon de commande, la facture et la livraison.
       </p>
       <div class="tags"><span class="tag">C#</span><span class="tag">SAGE</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Application de sécurité — gestion des rondes</h3>
+        <span class="project-num mono">PROJET 06</span>
+      </div>
+      <div class="pipeline">
+        <span class="stage">Points de contrôle (QR Code)</span><span class="arrow">→</span>
+        <span class="stage">Scan agent (mobile)</span><span class="arrow">→</span>
+        <span class="stage">Backend</span><span class="arrow">→</span>
+        <span class="stage">Export PDF des pointages</span>
+      </div>
+      <p class="desc">
+        Application de gestion de sécurité pour agents de rondes : les responsables paramètrent les agents et
+        les points de contrôle, génèrent les QR Codes correspondants, puis suivent et exportent l'historique
+        des pointages effectués sur le terrain.
+      </p>
+      <div class="project-sub">
+        <div class="project-sub-block">
+          <h4>Backend</h4>
+          <ul>
+            <li>Enregistrement des identifiants de connexion des responsables</li>
+            <li>Création des agents (nom, adresse MAC, téléphone)</li>
+            <li>Création des points de contrôle (site, code, commune, coordonnées GPS)</li>
+            <li>Génération automatique du QR Code par point de contrôle</li>
+            <li>Affectation des agents aux points de contrôle</li>
+            <li>Export PDF de l'état des pointages par plage de dates, par point de contrôle, et par agent si nécessaire</li>
+          </ul>
+        </div>
+        <div class="project-sub-block">
+          <h4>Frontend</h4>
+          <ul>
+            <li>Interface mobile pour les agents</li>
+            <li>Scan du QR Code du point de contrôle pour effectuer un pointage</li>
+            <li>Pointage possible à toute heure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-condition">
+        <h4>Condition de scan</h4>
+        <p>Le pointage n'est validé que si l'agent se trouve à moins de 5&nbsp;m du QR Code du point de contrôle concerné, via vérification de la position GPS.</p>
+      </div>
+      <div class="tags"><span class="tag">Géolocalisation</span><span class="tag">QR Code</span><span class="tag">Mobile</span><span class="tag">Export PDF</span></div>
     </div>
   </section>
 
